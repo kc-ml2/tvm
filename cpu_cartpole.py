@@ -23,6 +23,7 @@ from tvm.contrib import graph_runtime
 target = 'llvm -mtriple=arm-linux-gnueabihf'
 host = '192.168.2.99'
 port = 9091
+assert tvm.runtime.enabled("rpc")
 remote = rpc.connect(host, port)
 
 
@@ -82,7 +83,7 @@ reward_arr = []
 for i in tqdm(range(100)):
     obs, done, total_reward = world.reset(), False, 0
     while not done:
-        module.set_input("input0", tvm.nd.array(np.expand_dims(obs.astype("float32"), axis=0)))
+        module.set_input(input_name, tvm.nd.array(np.expand_dims(obs.astype("float32"), axis=0)))
         module.run()
         out = module.get_output(0).asnumpy()
         A = np.argmax(out)

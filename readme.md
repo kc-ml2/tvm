@@ -6,7 +6,7 @@ Here, I used Pynq-z1 board for target hardware.
 I referred [Building a DQN in PyTorch: Balancing Cart Pole with Deep RL
 ](https://blog.gofynd.com/building-a-deep-q-network-in-pytorch-fa1086aa5435) for Cartpole DQN model. 
 <br>
-If you want to have in-depth information about TVM, I recommend you to read [ML2's TVM blog post](링크 넣기).
+If you want to have in-depth information about TVM, I recommend you to read [ML2's TVM blog post](링크 넣기). Here, I wrote some troubleshootings that I experienced during this project.
 
 <br>
 <br>

@@ -16,6 +16,10 @@ from tvm.contrib import graph_runtime
 
 # Environment settings
 # Check target env with "gcc -v" command at device
+# Turn on rpc server at pynq side with command:
+# `python -m tvm.exec.rpc_server --host 0.0.0.0 --port=9090`
+# You can see this message that shows your rpc server is working well
+# INFO:root:RPCServer: bind to 0.0.0.0:9090
 target = 'llvm -mtriple=arm-linux-gnueabihf'
 host = '192.168.2.99'
 port = 9091

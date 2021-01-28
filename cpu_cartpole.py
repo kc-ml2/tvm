@@ -15,6 +15,7 @@ from tvm.contrib import graph_runtime
 
 
 # Environment settings
+# Check target env with "gcc -v" command at device
 target = 'llvm -mtriple=arm-linux-gnueabihf'
 host = '192.168.2.99'
 port = 9091
@@ -41,14 +42,13 @@ rand_input = torch.from_numpy(world.reset()).float().unsqueeze(0)
 scripted_model = torch.jit.trace(model, rand_input).eval()
 
 
-# Import the graph to Relay
-# Convert PyTorch graph to Relay graph. The input name can be arbitrary.
-input_name = "input0"
+# Import PyTorch graph to Relay.
+input_name = "cartpole-input"
 shape_list = [(input_name, rand_input.shape)]
 mod, params = relay.frontend.from_pytorch(scripted_model, shape_list)
 
 
-# Relay Build
+# Build Relay graph
 # Compile the graph to llvm target with given input specification.
 ctx = tvm.cpu()
 with tvm.transform.PassContext(opt_level=3):
@@ -67,12 +67,12 @@ remote.upload(lib_fname)
 rlib = remote.load_module("lib.tar")
 
 
-# create the remote runtime module
+# create remote runtime module
 ctx = remote.cpu(0)
 module = graph_runtime.GraphModule(rlib["default"](ctx))
 
 
-# set input data and run
+# run cartpole
 start_time = time.time()
 reward_arr = []
 for i in tqdm(range(100)):

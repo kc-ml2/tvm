@@ -94,9 +94,9 @@ Instead, you can refer `cpu_cartpole.py` file, which only utilizes CPU of Pynq-z
 ```
 Cannot find config for target=llvm -keys=cpu -mtriple=arm-linux-gnueabihf, workload=('dense_nopack.x86', ('TENSOR', (1, 64), 'float32'), ('TENSOR', (2, 64), 'float32'), None, 'float32'). A fallback configuration is used, which may bring great performance regression.
 Cannot find config for target=llvm -keys=cpu -mtriple=arm-linux-gnueabihf, workload=('dense_nopack.x86', ('TENSOR', (1, 4), 'float32'), ('TENSOR', (64, 4), 'float32'), None, 'float32'). A fallback configuration is used, which may bring great performance regression.
-100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:04<00:00, 23.76it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:14<00:00,  6.96it/s]
 Test done
-Elapsed time: 4.212365627288818 seconds
-average reward per episode :9.32
+Elapsed time: 14.382231712341309 seconds
+average reward per episode :9.35
 ```
 - The warning messages, `Cannot find ~~ regression` occured because we don’t have tuned config for this model. Fallback means that the tunable parameters aren’t tuned, so the defaults will be used. Performance won’t be optimal. For more information, refer [this discussion](https://discuss.tvm.apache.org/t/what-does-this-warning-cannot-find-config-for-target-cuda-mean/798)

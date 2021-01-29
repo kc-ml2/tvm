@@ -20,8 +20,9 @@ from tvm.contrib import graph_runtime
 # `python -m tvm.exec.rpc_server --host 0.0.0.0 --port=9090`
 # You can see this message that shows your rpc server is working well
 # INFO:root:RPCServer: bind to 0.0.0.0:9090
-target = 'llvm -mtriple=arm-linux-gnueabihf'
-host = '192.168.0.36'
+
+target = 'llvm -mtriple=arm-linux-gnueabihf' # my device is pynq-z1 board
+host = '192.168.0.36' # xilinx ip address. Modify to your proper address
 port = 9091
 assert tvm.runtime.enabled("rpc")
 remote = rpc.connect(host, port)

@@ -14,7 +14,7 @@ If you want to have in-depth information about TVM, I highly recommend you to re
 ## 0. Disclaimer
 The final goal of this project is fully utilizing related TVM stacks like AutoTVM and VTA so that I can fully utilize Pynq-Z1 board's FPGA. However, due to time lack, I couldn't finish this code. Legacy of AutoTVM+VTA code is `vta_cartpole.py` file.  
 Instead, you can refer `cpu_cartpole.py` file, which only utilizes CPU of Pynq-z1 board.  
-I made anotehr branch for `vta_cartpole`. I uploaded unfinished file, so that you can freely comment/advise me.
+I made anotehr branch for `vta_cartpole`, vta_cartpole. I uploaded unfinished file, so that you can freely comment/advise me.
 
 <br>
 <br>
@@ -44,6 +44,7 @@ I made anotehr branch for `vta_cartpole`. I uploaded unfinished file, so that yo
             ```python -m tvm.exec.rpc_server --host 0.0.0.0 --port=9090```
         - If you see this message, your device succesfully started RPC server:  
             ```INFO:root:RPCServer: bind to 0.0.0.0:9090```
+        - If you are running autoTVM stuff, you have to use tracker-server system. Refer vta_cartpole branch.
 
 
 <br>
@@ -61,8 +62,8 @@ I made anotehr branch for `vta_cartpole`. I uploaded unfinished file, so that yo
  ┃ ┗ 📜train_and_save.py
  ┣ 📜readme.md
  ┣ 📜requirements.txt
- ┣ 📜cpu_cartpole.py
- ┗ 📜vta_cartpole.py
+ ┗ 📜.gitignore
+ ┗ 📜cpu_cartpole.py
 ```
 - cartpole_model directory
     - Includes cartpole DQN model
@@ -80,9 +81,7 @@ I made anotehr branch for `vta_cartpole`. I uploaded unfinished file, so that yo
         - Trains DQN model and save to `cartpole-dqn.pth`.
 - `rpc_connect.py`
     - run cartpole at pynq board only with pynq-side-arm-cpu
-- `vta_connect.py`  
-    - incompleted
-    - run cartpole at pynq board with fully utilizing FPGA resource.
+
 
 <br>
 <br>

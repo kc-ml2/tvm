@@ -1,6 +1,6 @@
 # VTA Cartpole
 The main backbone code is [Auto-tuning a convolutional network on VTA](https://tvm.apache.org/docs/vta/tutorials/autotvm/tune_relay_vta.html#sphx-glr-vta-tutorials-autotvm-tune-relay-vta-py), which deals with conv2d operation optimization.  
-This branch is incompleted. I wrote some stuffs that should be modified below.  
+This branch is incompleted project. I wrote some stuffs that should be modified below.  
 
 ## Environment Settings
 Make sure your connection between pynq board and host machine.  

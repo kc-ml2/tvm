@@ -6,14 +6,15 @@ Here, I used Pynq-z1 board for target hardware.
 I referred [Building a DQN in PyTorch: Balancing Cart Pole with Deep RL
 ](https://blog.gofynd.com/building-a-deep-q-network-in-pytorch-fa1086aa5435) for Cartpole DQN model. 
 <br>
-If you want to have in-depth information about TVM, I recommend you to read [ML2's TVM blog post](링크 넣기). Here, I wrote some troubleshootings that I experienced during this project.
+If you want to have in-depth information about TVM, I highly recommend you to read [ML2's TVM blog post](링크 넣기). Here, I wrote some troubleshootings that I experienced during this project.
 
 <br>
 <br>
 
 ## 0. Disclaimer
 The final goal of this project is fully utilizing related TVM stacks like AutoTVM and VTA so that I can fully utilize Pynq-Z1 board's FPGA. However, due to time lack, I couldn't finish this code. Legacy of AutoTVM+VTA code is `vta_cartpole.py` file.  
-Instead, you can refer `cpu_cartpole.py` file, which only utilizes CPU of Pynq-z1 board.
+Instead, you can refer `cpu_cartpole.py` file, which only utilizes CPU of Pynq-z1 board.  
+I made anotehr branch for `vta_cartpole`. I uploaded unfinished file, so that you can freely comment/advise me.
 
 <br>
 <br>
@@ -25,6 +26,7 @@ Instead, you can refer `cpu_cartpole.py` file, which only utilizes CPU of Pynq-z
     - MacBook Pro 2019
     - Ubuntu 18.04 with Virtualbox
     - Python 3.6
+- For pynq-z1 board setup, follow [this document](https://pynq.readthedocs.io/en/v2.2.1/getting_started/pynq_z1_setup.html).
 - Install python packges in `requirements.txt`(Recommend you to use virtual environments so that you don't get version conflict).  
     ```pip install -r requirements.txt```  
 - TVM Installation

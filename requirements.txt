@@ -41,12 +41,11 @@ requests==2.24.0
 scipy==1.5.2
 six==1.15.0
 toml==0.10.2
-torch==1.4.0+cpu
-torchvision==0.5.0+cpu
+torch==1.4.0
+torchvision==0.5.0
 tornado==6.0.4
 tqdm==4.51.0
 traitlets==4.3.3
-tvm==0.8.dev204+gd03c0c063
 urllib3==1.25.11
 wcwidth==0.2.5
 xgboost==1.2.1
